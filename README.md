@@ -148,4 +148,3 @@ listing payloads again here
 - '{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_extract", "arguments": { "urls": ["www.tavily.com"]} } }'
 - '{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_crawl", "arguments": { "url": "www.tavily.com"} } }'
 - '{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_map", "arguments": { "url": "www.tavily.com"} } }'
-```
