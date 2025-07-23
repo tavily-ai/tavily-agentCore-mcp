@@ -102,7 +102,7 @@ Use Amazon Bedrock AgentCore - Preview to securely deploy, run, and scale AI age
 
 If using the AWS CLI, [install](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and [set up](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html) the CLI.
 
-```json
+```bash
 aws bedrock-agentcore-control create-agent-runtime \
   --region us-east-1 \
   --agent-runtime-name "<AGENT_NAME>" \
@@ -131,7 +131,7 @@ aws bedrock-agentcore-control create-agent-runtime \
 
 Once the previous command completes, you will receive an agent runtime ARN. Use the agent runtime ARN in following command to invoke your product.
 
-```json
+```bash
 export PAYLOAD='{ "jsonrpc": "2.0", "id": 1, "method": "tools/list", 
   "params": { "_meta": { "progressToken": 1}}}'
 
@@ -143,10 +143,9 @@ aws bedrock-agentcore invoke-agent-runtime \
 ```
 
 listing payloads again here
-```json
-'{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}'
-'{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_search", "arguments": { "query": "latest AI news", "max_results": 10 } } }'
-'{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_extract", "arguments": { "urls": ["www.tavily.com"]} } }'
-'{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_crawl", "arguments": { "url": "www.tavily.com"} } }'
-'{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_map", "arguments": { "url": "www.tavily.com"} } }'
+- '{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}'
+- '{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_search", "arguments": { "query": "latest AI news", "max_results": 10 } } }'
+- '{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_extract", "arguments": { "urls": ["www.tavily.com"]} } }'
+- '{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_crawl", "arguments": { "url": "www.tavily.com"} } }'
+- '{ "jsonrpc": "2.0", "id": "1", "method": "tools/call", "params": { "name": "tavily_map", "arguments": { "url": "www.tavily.com"} } }'
 ```
